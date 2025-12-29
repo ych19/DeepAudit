@@ -45,7 +45,7 @@ export function Header({
             <span className="font-bold text-foreground tracking-wider text-base leading-tight">
               DEEP<span className="text-primary">AUDIT</span>
             </span>
-            <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">Security Agent</span>
+            <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">安全代理</span>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export function Header({
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-muted/50 border border-border/50">
               <Radio className="w-3 h-3 text-muted-foreground" />
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Task</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">任务</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-foreground text-sm font-mono truncate max-w-[200px] font-medium">
@@ -79,12 +79,12 @@ export function Header({
             {isCancelling ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 mr-2 animate-spin" />
-                <span>Stopping</span>
+                <span>停止</span>
               </>
             ) : (
               <>
                 <Square className="w-3.5 h-3.5 mr-2" />
-                <span>Abort</span>
+                <span>中止</span>
               </>
             )}
           </Button>
@@ -100,7 +100,7 @@ export function Header({
           className="h-9 px-4 text-xs font-mono uppercase tracking-wider text-cyan-400 hover:text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-500/50 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-transparent rounded-md shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
         >
           <Download className="w-3.5 h-3.5 mr-2" />
-          <span>Export</span>
+          <span>导出</span>
         </Button>
 
         <Button
@@ -110,7 +110,7 @@ export function Header({
           className="h-9 px-4 text-xs font-mono uppercase tracking-wider text-primary hover:text-primary/90 bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary/50 transition-all duration-300 rounded-md shadow-[0_0_15px_rgba(255,107,44,0.15)] hover:shadow-[0_0_25px_rgba(255,107,44,0.25)]"
         >
           <Sparkles className="w-3.5 h-3.5 mr-2" />
-          <span>New Audit</span>
+          <span>新建审计</span>
         </Button>
       </div>
 

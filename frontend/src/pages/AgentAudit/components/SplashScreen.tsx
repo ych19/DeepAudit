@@ -234,30 +234,30 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
               <div
                 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider mb-3 font-mono relative logo-text"
               >
-                <span className="text-primary">DEEP</span>
-                <span className="text-gray-800 dark:text-white">AUDIT</span>
+                <span className="text-primary">智能漏洞分析平台</span>
+                {/* <span className="text-gray-800 dark:text-white">AUDIT</span> */}
               </div>
               {/* Glitch layers - dark mode only, opacity controlled by CSS */}
               <div className="glitch-layer glitch-layer-1 text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider font-mono absolute top-0 left-0 w-full opacity-0 dark:opacity-0">
-                <span className="text-cyan-500">DEEP</span>
-                <span className="text-white">AUDIT</span>
+                <span className="text-cyan-500">智能漏洞分析平台</span>
+                {/* <span className="text-white">AUDIT</span> */}
               </div>
               <div className="glitch-layer glitch-layer-2 text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider font-mono absolute top-0 left-0 w-full opacity-0 dark:opacity-0">
-                <span className="text-red-500">DEEP</span>
-                <span className="text-white">AUDIT</span>
+                <span className="text-red-500">智能漏洞分析平台</span>
+                {/* <span className="text-white">AUDIT</span> */}
               </div>
             </div>
             {/* Subtitle - adaptive styling */}
             <div className="flex items-center justify-center gap-3 text-gray-500 dark:text-gray-400 text-sm tracking-[0.3em] uppercase mt-4">
               <div className="w-12 h-px bg-gradient-to-r from-transparent via-primary/40 dark:via-cyan-500/50 to-transparent" />
               <Shield className="w-4 h-4 text-primary/70 dark:text-cyan-500/70" />
-              <span className="dark:cyber-text">Autonomous Security Agent</span>
+              <span className="dark:cyber-text">自主安全代理</span>
               <Shield className="w-4 h-4 text-primary/70 dark:text-cyan-500/70" />
               <div className="w-12 h-px bg-gradient-to-r from-transparent via-primary/40 dark:via-cyan-500/50 to-transparent" />
             </div>
             {/* Version tag */}
             <div className="mt-2 text-[10px] font-mono text-primary/50 tracking-widest">
-              [ v3.0.0 // NEURAL_CORE ]
+              [ v1.0.2  ]
             </div>
           </div>
 
@@ -395,7 +395,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
           <div className={`mt-4 text-center transition-all duration-500 ${bootComplete ? "opacity-100" : "opacity-0"}`}>
             <div className="flex items-center justify-center gap-3">
               <div className="h-px w-8 bg-gradient-to-r from-transparent to-gray-700" />
-              <span className="text-muted-foreground text-xs font-mono tracking-wider">PRESS ENTER TO EXECUTE</span>
+              <span className="text-muted-foreground text-xs font-mono tracking-wider">按Enter键执行</span>
               <div className="h-px w-8 bg-gradient-to-l from-transparent to-gray-700" />
             </div>
           </div>

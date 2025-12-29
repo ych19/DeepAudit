@@ -260,14 +260,14 @@ export class AgentErrorBoundary extends Component<Props, State> {
               className="flex-1 border-border hover:bg-muted"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Go Back
+              返回
             </Button>
             <Button
               onClick={this.handleReload}
               variant="ghost"
               className="flex-1 text-muted-foreground hover:text-foreground"
             >
-              Refresh Page
+              刷新页面
             </Button>
           </div>
 

@@ -315,7 +315,7 @@ export default function CreateTaskDialog({
               <div>
                 <span className="text-base font-bold uppercase tracking-wider">开始代码审计</span>
                 <p className="text-xs text-muted-foreground font-normal mt-0.5">
-                  Code Security Analysis
+                 代码安全分析
                 </p>
               </div>
             </DialogTitle>

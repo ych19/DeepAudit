@@ -110,30 +110,12 @@ export default function Login() {
       />
 
       {/* Corner Decorations */}
-      <div className="absolute top-4 left-4 text-sm font-mono text-muted-foreground z-30 space-y-1">
-        <div className="flex items-center gap-2">
-          <Terminal className="w-4 h-4" />
-          <span>SYS_ID: 0x84F2</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Shield className="w-4 h-4" />
-          <span>ENCRYPT: AES-256</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Fingerprint className="w-4 h-4" />
-          <span>AUTH: READY</span>
-        </div>
-      </div>
+     
+  
 
-      <div className="absolute top-4 right-4 text-sm font-mono text-muted-foreground text-right z-30 space-y-1">
-        <div>SECURE_CONN: TRUE</div>
-        <div>PORT: 443</div>
-        <div>TLS: 1.3</div>
-      </div>
-
-      <div className="absolute bottom-4 left-4 text-sm font-mono text-muted-foreground z-30">
+      {/* <div className="absolute bottom-4 left-4 text-sm font-mono text-muted-foreground z-30">
         DEEPAUDIT_AUTH_v3
-      </div>
+      </div> */}
 
       <div className="absolute bottom-4 right-4 text-sm font-mono text-muted-foreground z-30">
         {new Date().toISOString().split("T")[0]}
@@ -155,11 +137,11 @@ export default function Login() {
             className="text-3xl font-bold tracking-wider mb-2 font-mono"
             style={{ textShadow: "0 0 30px rgba(255,107,44,0.5), 0 0 60px rgba(255,107,44,0.3)" }}
           >
-            <span className="text-primary">DEEP</span>
-            <span className="text-foreground">AUDIT</span>
+            <span className="text-primary">智能漏洞分析平台</span>
+      
           </div>
           <p className="text-base font-mono text-muted-foreground">
-            // Autonomous Security Agent
+            // 自主安全代理
           </p>
         </div>
 
@@ -173,9 +155,7 @@ export default function Login() {
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <div className="w-3 h-3 rounded-full bg-green-500/80" />
             </div>
-            <span className="ml-2 font-mono text-sm text-muted-foreground tracking-wider">
-              authentication@deepaudit
-            </span>
+         
           </div>
 
           <div className="p-6">
@@ -276,7 +256,7 @@ export default function Login() {
         {/* Version Info */}
         <div className="mt-6 text-center">
           <p className="font-mono text-sm text-muted-foreground uppercase">
-            Version {version} · Secure Connection
+            版本 {version} · 安全连接
           </p>
         </div>
       </div>

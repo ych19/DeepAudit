@@ -16,9 +16,9 @@ import type { LogEntryProps } from "../types";
 
 // Log type labels for display with enhanced styling
 const LOG_TYPE_LABELS: Record<string, string> = {
-  thinking: 'THINK',
-  tool: 'TOOL',
-  phase: 'PHASE',
+  thinking: '思考',
+  tool: '工具',
+  phase: '阶段',
   finding: 'VULN',
   dispatch: 'AGENT',
   info: 'INFO',
@@ -26,6 +26,13 @@ const LOG_TYPE_LABELS: Record<string, string> = {
   user: 'USER',
   progress: 'PROG',
 };
+
+const agentNameLable:any = {
+  Recon: '侦察',
+  Orchestrator: '编排器',
+  Analysis: '分析器',
+  Verification: '验证器',
+}
 
 // Helper to format title (remove emojis and clean up)
 function formatTitle(title: string, type: string): string {
@@ -156,14 +163,14 @@ export const LogEntry = memo(function LogEntry({ item, isExpanded, onToggle }: L
             {item.tool?.status === 'running' && (
               <div className="flex items-center gap-2 flex-shrink-0 bg-amber-500/15 px-2.5 py-1 rounded-md border border-amber-500/30">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-600 dark:text-amber-400" />
-                <span className="text-xs text-amber-600 dark:text-amber-400 font-mono uppercase font-semibold">Running</span>
+                <span className="text-xs text-amber-600 dark:text-amber-400 font-mono uppercase font-semibold">运行中</span>
               </div>
             )}
 
             {item.tool?.status === 'completed' && (
               <div className="flex items-center gap-1.5 flex-shrink-0 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-500" />
-                <span className="text-xs text-emerald-600 dark:text-emerald-500 font-mono uppercase">Done</span>
+                <span className="text-xs text-emerald-600 dark:text-emerald-500 font-mono uppercase">完成</span>
               </div>
             )}
 
@@ -173,7 +180,8 @@ export const LogEntry = memo(function LogEntry({ item, isExpanded, onToggle }: L
                 variant="outline"
                 className="h-6 px-2.5 text-xs uppercase tracking-wider border-primary/40 text-primary bg-primary/10 flex-shrink-0 font-semibold"
               >
-                {item.agentName}
+                {agentNameLable[item.agentName]}
+                {/* {item.agentName} */}
               </Badge>
             )}
 

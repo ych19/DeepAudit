@@ -240,9 +240,9 @@ export default function CreateAgentTaskDialog({
               <Bot className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <span className="text-base font-bold uppercase tracking-wider">New Agent Audit</span>
+              <span className="text-base font-bold uppercase tracking-wider">新建审计</span>
               <p className="text-xs text-muted-foreground font-normal mt-0.5">
-                AI-Powered Security Analysis
+              基于人工智能的安全分析
               </p>
             </div>
           </DialogTitle>
@@ -253,10 +253,10 @@ export default function CreateAgentTaskDialog({
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-mono font-bold uppercase text-muted-foreground">
-                Select Project
+                选择项目
               </span>
               <Badge className="cyber-badge-muted font-mono text-xs">
-                {filteredProjects.length} available
+                {filteredProjects.length} 可选的
               </Badge>
             </div>
 
@@ -264,7 +264,7 @@ export default function CreateAgentTaskDialog({
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
-                placeholder="Search projects..."
+                placeholder="搜索项目..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="!pl-9 h-10 cyber-input"
@@ -304,11 +304,11 @@ export default function CreateAgentTaskDialog({
               {isRepositoryProject(selectedProject) && (
                 <div className="flex items-center gap-3 p-3 border border-border rounded bg-blue-950/20">
                   <GitBranch className="w-5 h-5 text-blue-400" />
-                  <span className="font-mono text-sm text-muted-foreground w-16">Branch</span>
+                  <span className="font-mono text-sm text-muted-foreground w-16">分支</span>
                   {loadingBranches ? (
                     <div className="flex items-center gap-2 flex-1">
                       <Loader2 className="w-4 h-4 animate-spin text-blue-400" />
-                      <span className="text-sm text-blue-400 font-mono">Loading...</span>
+                      <span className="text-sm text-blue-400 font-mono">加载中...</span>
                     </div>
                   ) : (
                     <Select value={branch} onValueChange={setBranch}>
@@ -385,7 +385,7 @@ export default function CreateAgentTaskDialog({
                 <CollapsibleTrigger className="flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors">
                   <ChevronRight className={`w-4 h-4 transition-transform ${showAdvanced ? "rotate-90" : ""}`} />
                   <Settings2 className="w-4 h-4" />
-                  <span className="uppercase font-bold">Advanced Options</span>
+                  <span className="uppercase font-bold">高级选项</span>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-3 space-y-3">
                   {/* 文件选择 */}
@@ -415,7 +415,7 @@ export default function CreateAgentTaskDialog({
                               onClick={() => setSelectedFiles(undefined)}
                               className="h-8 text-xs text-rose-400 hover:bg-rose-900/30 hover:text-rose-300"
                             >
-                              Reset
+                              重置
                             </Button>
                           )}
                           <Button
@@ -426,7 +426,7 @@ export default function CreateAgentTaskDialog({
                             className="h-8 text-xs cyber-btn-outline font-mono font-bold disabled:opacity-50"
                           >
                             <FolderOpen className="w-3 h-3 mr-1" />
-                            Select Files
+                          选择文件
                           </Button>
                         </div>
                       </div>
@@ -437,14 +437,14 @@ export default function CreateAgentTaskDialog({
                   <div className="p-3 border border-dashed border-border rounded bg-muted/50 space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs uppercase font-bold text-muted-foreground">
-                        Exclude Patterns
+                        排除图案
                       </span>
                       <button
                         type="button"
                         onClick={() => setExcludePatterns(DEFAULT_EXCLUDES)}
                         className="text-xs font-mono text-primary hover:text-primary/80"
                       >
-                        Reset
+                        重置
                       </button>
                     </div>
 
@@ -488,7 +488,7 @@ export default function CreateAgentTaskDialog({
             disabled={creating}
             className="px-4 h-10 font-mono text-muted-foreground hover:text-foreground hover:bg-muted"
           >
-            Cancel
+            取消
           </Button>
           <Button
             onClick={handleCreate}
@@ -498,12 +498,12 @@ export default function CreateAgentTaskDialog({
             {creating ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                Starting...
+              启动中...
               </>
             ) : (
               <>
                 <Play className="w-4 h-4 mr-2" />
-                Start Audit
+              启动审计
               </>
             )}
           </Button>

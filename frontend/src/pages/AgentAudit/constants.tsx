@@ -96,28 +96,28 @@ export const AGENT_STATUS_CONFIG: Record<string, {
   running: {
     icon: React.createElement("div", { className: "w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400" }),
     color: "text-emerald-600 dark:text-emerald-400",
-    text: "Running",
+    text: "运行中",
     animate: true
   },
   completed: {
     icon: React.createElement(CheckCircle2, { className: "w-3 h-3 text-emerald-600 dark:text-emerald-400" }),
     color: "text-emerald-600 dark:text-emerald-400",
-    text: "Completed"
+    text: "完成"
   },
   failed: {
     icon: React.createElement(XCircle, { className: "w-3 h-3 text-rose-600 dark:text-rose-400" }),
     color: "text-rose-600 dark:text-rose-400",
-    text: "Failed"
+    text: "失败"
   },
   waiting: {
     icon: React.createElement(Clock, { className: "w-3 h-3 text-amber-600 dark:text-amber-400" }),
     color: "text-amber-600 dark:text-amber-400",
-    text: "Waiting"
+    text: "等待中"
   },
   created: {
     icon: React.createElement("div", { className: "w-2 h-2 rounded-full bg-muted" }),
     color: "text-muted-foreground",
-    text: "Created"
+    text: "已创建"
   },
 };
 
@@ -130,22 +130,22 @@ export const AGENT_TYPE_CONFIG: Record<string, {
 }> = {
   orchestrator: {
     icon: React.createElement(Cpu, { className: "w-4 h-4 text-violet-600 dark:text-violet-400" }),
-    label: "Orchestrator",
+    label: "",
     color: "violet"
   },
   recon: {
     icon: React.createElement(Scan, { className: "w-4 h-4 text-teal-600 dark:text-teal-400" }),
-    label: "Reconnaissance",
+    label: "侦察",
     color: "teal"
   },
   analysis: {
     icon: React.createElement(FileSearch, { className: "w-4 h-4 text-amber-600 dark:text-amber-400" }),
-    label: "Analysis",
+    label: "分析",
     color: "amber"
   },
   verification: {
     icon: React.createElement(ShieldCheck, { className: "w-4 h-4 text-emerald-600 dark:text-emerald-400" }),
-    label: "Verification",
+    label: "验证",
     color: "emerald"
   },
 };
@@ -160,27 +160,27 @@ export const TASK_STATUS_CONFIG: Record<string, {
   pending: {
     bg: "bg-muted",
     icon: React.createElement(Clock, { className: "w-3 h-3" }),
-    text: "PENDING"
+    text: "等待中"
   },
   running: {
     bg: "bg-emerald-600",
     icon: React.createElement(Loader2, { className: "w-3 h-3 animate-spin" }),
-    text: "RUNNING"
+    text: "运行中"
   },
   completed: {
     bg: "bg-emerald-600",
     icon: React.createElement(CheckCircle2, { className: "w-3 h-3" }),
-    text: "COMPLETED"
+    text: "完成"
   },
   failed: {
     bg: "bg-rose-600",
     icon: React.createElement(XCircle, { className: "w-3 h-3" }),
-    text: "FAILED"
+    text: "失败"
   },
   cancelled: {
     bg: "bg-amber-600",
     icon: React.createElement(Square, { className: "w-3 h-3" }),
-    text: "CANCELLED"
+    text: "已取消"
   },
 };
 

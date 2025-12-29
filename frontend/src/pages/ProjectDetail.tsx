@@ -878,57 +878,60 @@ export default function ProjectDetail() {
 
       {/* 审计选项对话框 */}
       <Dialog open={showAuditOptionsDialog} onOpenChange={setShowAuditOptionsDialog}>
-        <DialogContent className="max-w-md cyber-card border-border cyber-dialog p-0">
-          {/* Terminal Header */}
-          <div className="flex items-center gap-2 px-4 py-3 cyber-bg-elevated border-b border-border">
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
-            </div>
-            <span className="ml-2 font-mono text-xs text-muted-foreground tracking-wider">
-              audit_options@deepaudit
-            </span>
+  <div className="inset-0 z-50 flex items-center justify-center p-4">
+    <div className=" inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowAuditOptionsDialog(false)} />
+    <DialogContent >
+      {/* Terminal Header */}
+      <div className="flex items-center gap-2 px-4 py-3 cyber-bg-elevated border-b border-border">
+        <div className="flex items-center gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+        </div>
+        <span className="ml-2 font-mono text-xs text-muted-foreground tracking-wider">
+          {/* audit_options@deepaudit */}
+        </span>
+      </div>
+
+      <DialogHeader className="px-6 pt-4">
+        <DialogTitle className="font-mono text-lg uppercase tracking-wider flex items-center gap-2 text-foreground">
+          <Shield className="w-5 h-5 text-primary" />
+          选择审计方式
+        </DialogTitle>
+      </DialogHeader>
+
+      <div className="p-6 space-y-4">
+        <Button
+          onClick={handleStartFullAudit}
+          className="w-full h-auto py-4 flex flex-col items-center justify-center space-y-2 cyber-btn-outline hover:bg-muted"
+        >
+          <div className="flex items-center space-x-2">
+            <Activity className="w-5 h-5" />
+            <span className="text-lg font-bold uppercase">全量审计</span>
           </div>
+          <span className="text-xs text-muted-foreground font-mono">扫描项目中的所有文件</span>
+        </Button>
 
-          <DialogHeader className="px-6 pt-4">
-            <DialogTitle className="font-mono text-lg uppercase tracking-wider flex items-center gap-2 text-foreground">
-              <Shield className="w-5 h-5 text-primary" />
-              选择审计方式
-            </DialogTitle>
-          </DialogHeader>
-
-          <div className="p-6 space-y-4">
-            <Button
-              onClick={handleStartFullAudit}
-              className="w-full h-auto py-4 flex flex-col items-center justify-center space-y-2 cyber-btn-outline hover:bg-muted"
-            >
-              <div className="flex items-center space-x-2">
-                <Activity className="w-5 h-5" />
-                <span className="text-lg font-bold uppercase">全量审计</span>
-              </div>
-              <span className="text-xs text-muted-foreground font-mono">扫描项目中的所有文件</span>
-            </Button>
-
-            <Button
-              onClick={handleOpenCustomAudit}
-              className="w-full h-auto py-4 flex flex-col items-center justify-center space-y-2 cyber-btn-outline hover:bg-muted"
-            >
-              <div className="flex items-center space-x-2">
-                <FileText className="w-5 h-5" />
-                <span className="text-lg font-bold uppercase">自定义审计</span>
-              </div>
-              <span className="text-xs text-muted-foreground font-mono">选择特定文件进行扫描</span>
-            </Button>
+        <Button
+          onClick={handleOpenCustomAudit}
+          className="w-full h-auto py-4 flex flex-col items-center justify-center space-y-2 cyber-btn-outline hover:bg-muted"
+        >
+          <div className="flex items-center space-x-2">
+            <FileText className="w-5 h-5" />
+            <span className="text-lg font-bold uppercase">自定义审计</span>
           </div>
+          <span className="text-xs text-muted-foreground font-mono">选择特定文件进行扫描</span>
+        </Button>
+      </div>
 
-          <DialogFooter className="p-4 border-t border-border bg-muted/50">
-            <Button variant="outline" onClick={() => setShowAuditOptionsDialog(false)} className="w-full cyber-btn-outline">
-              取消
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <DialogFooter className="p-4 border-t border-border bg-muted/50">
+        <Button variant="outline" onClick={() => setShowAuditOptionsDialog(false)} className="w-full cyber-btn-outline">
+          取消
+        </Button>
+      </DialogFooter>
+    </DialogContent>
+  </div>
+</Dialog>
 
       {/* 文件选择对话框 */}
       <FileSelectionDialog

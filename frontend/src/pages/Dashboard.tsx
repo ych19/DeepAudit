@@ -343,12 +343,13 @@ export default function Dashboard() {
                     </Pie>
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: 'var(--cyber-bg-elevated)',
+                        // backgroundColor: 'var(--cyber-bg-elevated)',
                         border: '1px solid var(--cyber-border)',
                         borderRadius: '4px',
                         fontFamily: 'monospace',
                         fontSize: '12px',
-                        color: 'var(--cyber-text)'
+                        color: '#fff'
+                        // color: 'var(--cyber-text)'
                       }}
                     />
                   </PieChart>

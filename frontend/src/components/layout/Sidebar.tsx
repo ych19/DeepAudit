@@ -149,12 +149,12 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                                     className="text-xl font-bold tracking-wider font-mono leading-tight"
                                     style={{ textShadow: '0 0 25px rgba(255,107,44,0.4)' }}
                                 >
-                                    <span className="text-primary">DEEP</span>
-                                    <span style={{ color: 'var(--cyber-text)' }}>AUDIT</span>
+                                    <span className="text-primary" style={{fontSize: 18}}> 智能漏洞分析平台</span>
+                                    {/* <span style={{ color: 'var(--cyber-text)' }}>AUDIT</span> */}
                                 </div>
-                                <div className="text-[10px] text-muted-foreground tracking-[0.15em] uppercase mt-0.5">
+                                {/* <div className="text-[10px] text-muted-foreground tracking-[0.15em] uppercase mt-0.5">
                                     Security Agent
-                                </div>
+                                </div> */}
                             </div>
                         </Link>
 
@@ -280,7 +280,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                         </Link>
 
                         {/* GitHub Link with enhanced styling */}
-                        <a
+                        {/* <a
                             href="https://github.com/lintsinghua/DeepAudit"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -300,7 +300,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                                     <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground" />
                                 </div>
                             )}
-                        </a>
+                        </a> */}
 
                         {/* System Status with enhanced styling */}
                         {!collapsed && (
@@ -314,7 +314,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                                         <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping opacity-50" />
                                     </div>
                                     <span className="text-xs font-mono uppercase tracking-wider text-emerald-500">
-                                        System Online
+                                        系统在线
                                     </span>
                                 </div>
                             </div>

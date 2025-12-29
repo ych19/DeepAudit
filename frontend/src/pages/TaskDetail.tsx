@@ -102,8 +102,8 @@ function IssuesList({ issues }: { issues: AuditIssue[] }) {
             {issue.line_number && (
               <div className="flex items-center space-x-1 text-xs text-muted-foreground mt-1 font-mono">
                 <span className="text-primary">&gt;</span>
-                <span>LINE: {issue.line_number}</span>
-                {issue.column_number && <span>, COL: {issue.column_number}</span>}
+                <span>行数: {issue.line_number}</span>
+                {issue.column_number && <span>, 列数: {issue.column_number}</span>}
               </div>
             )}
           </div>
@@ -134,7 +134,7 @@ function IssuesList({ issues }: { issues: AuditIssue[] }) {
               <div className="w-4 h-4 bg-primary rounded flex items-center justify-center">
                 <Code className="w-2 h-2 text-foreground" />
               </div>
-              <span className="text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono uppercase">CODE_SNIPPET</span>
+              <span className="text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono uppercase">代码片段</span>
             </div>
             {issue.line_number && (
               <span className="text-muted-foreground text-xs font-mono">LINE: {issue.line_number}</span>

@@ -141,7 +141,7 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
               <div className="p-1.5 rounded-md bg-primary/15 border border-primary/30">
                 <Activity className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-sm text-foreground uppercase tracking-wider font-semibold">Progress</span>
+              <span className="text-sm text-foreground uppercase tracking-wider font-semibold">进度</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-lg text-primary font-mono font-bold">{progressPercent.toFixed(0)}</span>
@@ -177,7 +177,7 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
           <div className="flex items-center justify-between mt-4 text-sm">
             <div className="flex items-center gap-2 text-muted-foreground">
               <FileCode className="w-4 h-4" />
-              <span className="font-medium">Files scanned</span>
+              <span className="font-medium">扫描文件数</span>
             </div>
             <span className="text-foreground font-mono font-bold">
               {task.analyzed_files}<span className="text-muted-foreground font-normal"> / {task.total_files}</span>
@@ -188,7 +188,7 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
             <div className="flex items-center justify-between mt-2 text-sm">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <AlertTriangle className="w-4 h-4 text-rose-500" />
-                <span className="font-medium">Files with findings</span>
+                <span className="font-medium">带有调查结果的文件</span>
               </div>
               <span className="text-rose-500 font-mono font-bold">
                 {task.files_with_findings}
@@ -202,13 +202,13 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
       <div className="grid grid-cols-2 gap-2.5">
         <MetricCard
           icon={<Repeat className="w-4 h-4" />}
-          label="Iterations"
+          label="迭代"
           value={task.total_iterations || 0}
           colorClass="text-teal-500"
         />
         <MetricCard
           icon={<Zap className="w-4 h-4" />}
-          label="Tool Calls"
+          label="工具调用"
           value={task.tool_calls_count || 0}
           colorClass="text-amber-500"
         />
@@ -221,7 +221,7 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
         />
         <MetricCard
           icon={<Bug className="w-4 h-4" />}
-          label="Findings"
+          label="结果"
           value={totalFindings}
           colorClass={totalFindings > 0 ? "text-rose-500" : "text-muted-foreground"}
           bgClass={totalFindings > 0 ? "border-rose-500/20" : ""}
@@ -239,28 +239,28 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
               <div className="p-1.5 rounded-md bg-rose-500/15 border border-rose-500/30">
                 <AlertTriangle className="w-4 h-4 text-rose-500" />
               </div>
-              <span className="text-sm text-foreground uppercase tracking-wider font-semibold">Severity Breakdown</span>
+              <span className="text-sm text-foreground uppercase tracking-wider font-semibold">严重性细分</span>
             </div>
 
             <div className="flex flex-wrap gap-2">
               {severityCounts.critical > 0 && (
                 <Badge className="bg-rose-500/20 text-rose-600 dark:text-rose-300 border border-rose-500/40 text-xs font-mono font-bold px-2.5 py-1 shadow-[0_0_10px_rgba(244,63,94,0.15)]">
-                  CRITICAL: {severityCounts.critical}
+                  关键: {severityCounts.critical}
                 </Badge>
               )}
               {severityCounts.high > 0 && (
                 <Badge className="bg-orange-500/20 text-orange-600 dark:text-orange-300 border border-orange-500/40 text-xs font-mono font-bold px-2.5 py-1 shadow-[0_0_10px_rgba(249,115,22,0.15)]">
-                  HIGH: {severityCounts.high}
+                  高: {severityCounts.high}
                 </Badge>
               )}
               {severityCounts.medium > 0 && (
                 <Badge className="bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-amber-500/40 text-xs font-mono font-bold px-2.5 py-1 shadow-[0_0_10px_rgba(245,158,11,0.15)]">
-                  MEDIUM: {severityCounts.medium}
+                  中: {severityCounts.medium}
                 </Badge>
               )}
               {severityCounts.low > 0 && (
                 <Badge className="bg-sky-500/20 text-sky-600 dark:text-sky-300 border border-sky-500/40 text-xs font-mono font-bold px-2.5 py-1 shadow-[0_0_10px_rgba(14,165,233,0.15)]">
-                  LOW: {severityCounts.low}
+                  低: {severityCounts.low}
                 </Badge>
               )}
             </div>
@@ -292,11 +292,11 @@ export const StatsPanel = memo(function StatsPanel({ task, findings }: StatsPane
                 }`} />
               </div>
               <div>
-                <span className="text-sm text-foreground uppercase tracking-wider font-semibold block">Security Score</span>
+                <span className="text-sm text-foreground uppercase tracking-wider font-semibold block">安全评分</span>
                 <span className="text-xs text-muted-foreground">
-                  {task.security_score >= 80 ? 'Excellent' :
-                   task.security_score >= 60 ? 'Good' :
-                   'Needs Attention'}
+                  {task.security_score >= 80 ? '完美' :
+                   task.security_score >= 60 ? '好' :
+                   '需要注意'}
                 </span>
               </div>
             </div>

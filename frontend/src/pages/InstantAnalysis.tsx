@@ -361,8 +361,8 @@ public class Example {
             <h4 className="font-bold text-base text-foreground mb-1 group-hover:text-primary transition-colors uppercase">{issue.title}</h4>
             <div className="flex items-center space-x-1 text-xs text-muted-foreground font-mono">
               <span className="text-primary">&gt;</span>
-              <span>LINE: {issue.line}</span>
-              {issue.column && <span>, COL: {issue.column}</span>}
+              <span>行数: {issue.line}</span>
+              {issue.column && <span>, 列数: {issue.column}</span>}
             </div>
           </div>
         </div>

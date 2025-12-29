@@ -764,7 +764,7 @@ function AgentAuditPageContent() {
         <div className="absolute inset-0 vignette pointer-events-none" />
         <div className="flex items-center gap-3 text-muted-foreground relative z-10">
           <Loader2 className="w-5 h-5 animate-spin text-primary" />
-          <span className="font-mono text-sm tracking-wide">LOADING AUDIT TASK...</span>
+          <span className="font-mono text-sm tracking-wide">正在加载审核任务...</span>
         </div>
       </div>
     );
@@ -792,16 +792,16 @@ function AgentAuditPageContent() {
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <div className="flex items-center gap-2.5">
                 <Terminal className="w-4 h-4 text-primary" />
-                <span className="uppercase font-bold tracking-wider text-foreground text-sm">Activity Log</span>
+                <span className="uppercase font-bold tracking-wider text-foreground text-sm">活动日志</span>
               </div>
               {isConnected && (
                 <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">Live</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">实时</span>
                 </div>
               )}
               <Badge variant="outline" className="h-6 px-2 text-xs border-border text-muted-foreground font-mono bg-muted">
-                {filteredLogs.length}{!showAllLogs && logs.length !== filteredLogs.length ? ` / ${logs.length}` : ''} entries
+                {filteredLogs.length}{!showAllLogs && logs.length !== filteredLogs.length ? ` / ${logs.length}` : ''} 条
               </Badge>
             </div>
 
@@ -816,7 +816,7 @@ function AgentAuditPageContent() {
               `}
             >
               <ArrowDown className="w-3.5 h-3.5" />
-              <span>Auto-scroll</span>
+              <span>自动滚动</span>
             </button>
           </div>
 
@@ -827,13 +827,13 @@ function AgentAuditPageContent() {
               <div className="mb-4 px-4 py-2.5 bg-primary/10 border border-primary/30 rounded-lg flex items-center justify-between">
                 <div className="flex items-center gap-2.5 text-sm text-primary">
                   <Filter className="w-3.5 h-3.5" />
-                  <span className="font-medium">Filtering logs for selected agent</span>
+                  <span className="font-medium">筛选所选代理的日志</span>
                 </div>
                 <button
                   onClick={() => selectAgent(null)}
                   className="text-xs text-muted-foreground hover:text-primary font-mono uppercase px-2 py-1 rounded hover:bg-primary/10"
                 >
-                  Clear Filter
+                 清空
                 </button>
               </div>
             )}
@@ -845,11 +845,11 @@ function AgentAuditPageContent() {
                   {isRunning ? (
                     <div className="flex flex-col items-center gap-3">
                       <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
-                      <span className="text-sm font-mono tracking-wide">
-                        {selectedAgentId && !showAllLogs
-                          ? 'WAITING FOR ACTIVITY FROM SELECTED AGENT...'
-                          : 'WAITING FOR AGENT ACTIVITY...'}
-                      </span>
+                        <span className="text-sm font-mono tracking-wide">
+                          {selectedAgentId && !showAllLogs
+                            ? 'WAITING FOR ACTIVITY FROM SELECTED AGENT...'
+                            : 'WAITING FOR AGENT ACTIVITY...'}
+                        </span>
                     </div>
                   ) : (
                     <span className="text-sm font-mono tracking-wide">
@@ -896,7 +896,7 @@ function AgentAuditPageContent() {
                     AUDIT {task.status?.toUpperCase()}
                   </span>
                 ) : (
-                  <span className="text-muted-foreground font-mono">READY</span>
+                  <span className="text-muted-foreground font-mono">准备</span>
                 )}
               </span>
               <div className="flex items-center gap-5 font-mono text-muted-foreground relative z-10">
@@ -908,12 +908,12 @@ function AgentAuditPageContent() {
                 <div className="flex items-center gap-1.5">
                   <span className="text-foreground font-semibold">{task.analyzed_files}</span>
                   <span className="text-muted-foreground">/ {task.total_files}</span>
-                  <span className="text-muted-foreground text-xs">files</span>
+                  <span className="text-muted-foreground text-xs">文件</span>
                 </div>
                 <div className="w-px h-4 bg-border" />
                 <div className="flex items-center gap-1.5">
                   <span className="text-foreground font-semibold">{task.tool_calls_count || 0}</span>
-                  <span className="text-muted-foreground text-xs">tools</span>
+                  <span className="text-muted-foreground text-xs">工具</span>
                 </div>
               </div>
             </div>
@@ -929,7 +929,7 @@ function AgentAuditPageContent() {
               <div className="flex items-center gap-2.5 text-xs text-muted-foreground">
                 <Bot className="w-4 h-4 text-violet-600 dark:text-violet-500" />
                 <span className="uppercase font-bold tracking-wider text-foreground text-sm">
-                  {selectedAgentId && !showAllLogs ? 'Agent Detail' : 'Agent Tree'}
+                  {selectedAgentId && !showAllLogs ? '代理详情' : '代理列表'}
                 </span>
                 {!selectedAgentId && agentTree && (
                   <Badge variant="outline" className="h-5 px-2 text-xs border-violet-500/30 text-violet-600 dark:text-violet-500 font-mono bg-violet-500/10">
@@ -943,7 +943,7 @@ function AgentAuditPageContent() {
                     onClick={() => selectAgent(null)}
                     className="text-xs text-primary hover:text-primary/80 font-mono uppercase px-2 py-1 rounded hover:bg-primary/10"
                   >
-                    Back
+                    返回
                   </button>
                 )}
                 {!selectedAgentId && agentTree && agentTree.running_agents > 0 && (
@@ -980,12 +980,12 @@ function AgentAuditPageContent() {
                   {isRunning ? (
                     <div className="flex flex-col items-center gap-3 p-6">
                       <Loader2 className="w-6 h-6 animate-spin text-violet-600 dark:text-violet-500" />
-                      <span className="font-mono text-center">INITIALIZING<br/>AGENTS...</span>
+                      <span className="font-mono text-center">初始化<br/>代理...</span>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-2 p-6 text-center">
                       <Bot className="w-8 h-8 text-muted-foreground/50" />
-                      <span className="font-mono">NO AGENTS YET</span>
+                      <span className="font-mono">暂无代理</span>
                     </div>
                   )}
                 </div>

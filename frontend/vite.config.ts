@@ -24,22 +24,22 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+          vendor: ["react", "react-dom", "react-router-dom"],
           ui: [
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-select',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-progress'
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-progress",
           ],
-          charts: ['recharts'],
-          ai: ['@google/generative-ai'],
-          utils: ['clsx', 'tailwind-merge', 'date-fns', 'sonner']
+          charts: ["recharts"],
+          ai: ["@google/generative-ai"],
+          utils: ["clsx", "tailwind-merge", "date-fns", "sonner"],
         },
       },
     },
     chunkSizeWarningLimit: 1000,
     sourcemap: false,
-    minify: 'terser',
+    minify: "terser",
     terserOptions: {
       compress: {
         drop_console: true,
@@ -64,7 +64,7 @@ export default defineConfig({
     },
     proxy: {
       "/api": {
-        target: process.env.VITE_API_TARGET || "http://127.0.0.1:8000",
+        target: "http://10.80.1.101:8000",
         changeOrigin: true,
         secure: false,
       },
@@ -87,12 +87,12 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: [
-      'react',
-      'react-dom',
-      'react-router-dom',
-      '@google/generative-ai',
-      'recharts',
-      'sonner'
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "@google/generative-ai",
+      "recharts",
+      "sonner",
     ],
   },
 });

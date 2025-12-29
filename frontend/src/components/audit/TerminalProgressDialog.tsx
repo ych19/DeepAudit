@@ -500,14 +500,14 @@ export default function TerminalProgressDialog({
                         {/* Left Sidebar - Task Info */}
                         <div className="w-48 p-4 border-r border-slate-200 dark:border-[#1a2535] bg-slate-50 dark:bg-[#060810] flex flex-col gap-4">
                             <div className="space-y-1.5">
-                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">Task ID</div>
+                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">任务 ID</div>
                                 <div className="text-xs font-mono text-primary truncate bg-white dark:cyber-bg-elevated p-2.5 rounded border border-slate-200 dark:border-[#1a2535]">
                                     {taskId?.slice(0, 8)}...
                                 </div>
                             </div>
 
                             <div className="space-y-1.5">
-                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">Type</div>
+                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">类型</div>
                                 <div className="flex items-center gap-2 bg-white dark:cyber-bg-elevated p-2.5 rounded border border-slate-200 dark:border-[#1a2535]">
                                     {taskType === 'repository'
                                         ? <Cpu className="w-3.5 h-3.5 text-cyan-600 dark:text-[#22d3ee]" />
@@ -520,15 +520,15 @@ export default function TerminalProgressDialog({
 
                             {/* Status Badge */}
                             <div className="space-y-2">
-                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">Status</div>
+                                <div className="text-xs font-bold text-slate-500 dark:text-[#5a6577] uppercase tracking-[0.15em]">状态</div>
                                 {isCancelled ? (
-                                    <Badge className="w-full justify-center cyber-badge-warning">CANCELLED</Badge>
+                                    <Badge className="w-full justify-center cyber-badge-warning">已取消</Badge>
                                 ) : isCompleted ? (
-                                    <Badge className="w-full justify-center cyber-badge-success">COMPLETED</Badge>
+                                    <Badge className="w-full justify-center cyber-badge-success">完成</Badge>
                                 ) : isFailed ? (
-                                    <Badge className="w-full justify-center cyber-badge-danger">FAILED</Badge>
+                                    <Badge className="w-full justify-center cyber-badge-danger">失败</Badge>
                                 ) : (
-                                    <Badge className="w-full justify-center cyber-badge-info animate-pulse">RUNNING</Badge>
+                                    <Badge className="w-full justify-center cyber-badge-info animate-pulse">运行中</Badge>
                                 )}
                             </div>
                         </div>
@@ -567,7 +567,7 @@ export default function TerminalProgressDialog({
                                 <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-[#6a7587] font-mono tracking-wide">
                                     <Activity className="w-3.5 h-3.5" />
                                     <span>
-                                        {isCompleted ? "TASK COMPLETED" : isFailed ? "TASK FAILED" : isCancelled ? "TASK CANCELLED" : "EXECUTING..."}
+                                        {isCompleted ? "任务已完成" : isFailed ? "任务失败" : isCancelled ? "任务已取消" : "执行中..."}
                                     </span>
                                 </div>
 
