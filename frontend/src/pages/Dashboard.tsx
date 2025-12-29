@@ -40,6 +40,8 @@ export default function Dashboard() {
   const loadDashboardData = async () => {
     try {
       setLoading(true);
+      console.log('11');
+      
 
       const results = await Promise.allSettled([
         api.getProjectStats(),
